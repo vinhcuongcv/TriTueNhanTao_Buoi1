@@ -5,49 +5,43 @@ import matplotlib.pyplot as plt
 def Print_Name(name):
     for char in name:
         print(char)
+
 # Phần 1 - Bài 2 : In tất cả các số lẻ từ 1 đến 10
 def Print_All_Odd_Numbers():
     for x in range(1, 11, 2):
         print(x)
-# Phần 1 - Bài 3 :
+
+# Phần 1 - Bài 3a : Tính tổng tất cả các số lẻ từ 1 đến 10
 def Sum_Odd_Numbers():
     print("Sum of odd numbers:", sum(range(1, 11, 2)))
-# Phần 1 - Bài 4
+
+# Phần 1 - Bài 3b :  Tính tổng tất cả các số từ 1 đến 6
 def Sum_From_1_To_6():
     print("Sum from 1 to 6:", sum(range(1, 7)))
-# Phần 1 - Bài 5
+
+# Phần 1 - Bài 4 : Các thao tác với từ điển (lấy khóa, giá trị, cặp khóa-giá trị)
 def Dictionary_Operations():
     mydict = {"a": 1, "b": 2, "c": 3, "d": 4}
     print("Keys:", list(mydict.keys()))
     print("Values:", list(mydict.values()))
     for key, value in mydict.items():
         print(f"{key}: {value}")
-# Phần 1 - Bài 6
 
+# Phần 1 - Bài 5 : In danh sách các cặp (tên khóa học, tên khóa)
 def print_course_name_pairs():
     courses = [131, 141, 142, 212]
     names = ["Maths", "Physics", "Chem", "Bio"]
     course_name_pairs = list(zip(courses, names))
     print(course_name_pairs)
 
-# Phần 1 - Bài 7
+# Phần 1 - Bài 6 : Đếm số phụ âm trong chuỗi 'jabbawocky'
 def count_consonants():
     word = "jabbawocky"
     vowels = {'a', 'e', 'i', 'o', 'u'}
-
-    # Cách 1: Không dùng "continue"
     consonant_count_1 = sum(1 for char in word if char not in vowels)
-    print("Consonant count (without continue):", consonant_count_1)
+    print("Consonant count :", consonant_count_1)
 
-    # Cách 2: Dùng "continue"
-    consonant_count_2 = 0
-    for char in word:
-        if char in vowels:
-            continue
-        consonant_count_2 += 1
-    print("Consonant count (with continue):", consonant_count_2)
-
-# Phần 1 - Bài 8
+# Phần 1 - Bài 7 : Chia 10 cho a với xử lý ngoại lệ (-2 ≤ a < 3)
 def divide_by_a():
     for a in range(-2, 3):
         try:
@@ -55,7 +49,8 @@ def divide_by_a():
             print(f"10 / {a} = {result}")
         except ZeroDivisionError:
             print(f"10 / {a} = can't divide by zero")
-#Phần 1 - Bài 9
+
+#Phần 1 - Bài 8 : Sắp xếp danh sách các cặp (tuổi, tên) theo thứ tự tăng dần của tuổi
 def sort_by_age():
     ages = [23, 10, 80]
     names = ["Hoa", "Lam", "Nam"]
@@ -64,6 +59,7 @@ def sort_by_age():
     sorted_people = sorted(people, key=lambda x: x[0])
     print("Sorted by age:", sorted_people)
 
+#Phần 1 - Bài 9 : Thao tác với tệp (mở tệp, đọc từng dòng, đọc toàn bộ)
 def file_operations():
     # a/ Mở file và đọc từng dòng
     print("\nĐọc file từng dòng:")
@@ -77,11 +73,11 @@ def file_operations():
         content = file.read()
         print(content)
 
-# Phần 2 - Bài 1
+# Phần 2 - Bài 1 : Tính tổng hai số
 def sum_two_numbers(a, b):
     return a + b
 
-#Phần 2 - Bài 2
+#Phần 2 - Bài 2 : Tạo ma trận 3x3 và vector, kiểm tra rank & shape
 def create_matrix_and_vector():
     # Tạo ma trận 3x3
     M = np.array([[1, 2, 3],
@@ -109,12 +105,14 @@ def create_matrix_and_vector():
     print("Shape of matrix M:", shape_M)
     print("\nRank of vector v:", rank_v)
     print("Shape of vector v:", shape_v)
-# Phần 2 - Bài 3
+
+# Phần 2 - Bài 3 : Tạo ma trận mới từ M bằng phép toán (M + 3)
 def create_modified_matrix():
     M = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     new_M = M + 3
     print("New Matrix (M + 3):\n", new_M)
-# Phần 2 - Bài 4
+
+# Phần 2 - Bài 4 : Tính chuyển vị của ma trận M và vector v
 def transpose_matrix_and_vector():
     M = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     v = np.array([1, 2, 3])
@@ -122,7 +120,7 @@ def transpose_matrix_and_vector():
     print("Transpose of M:\n", M.T)
     print("Transpose of v:\n", v.reshape(-1, 1))
 
-# Phần 2 - Bài 5
+# Phần 2 - Bài 5 : Tính chuẩn (norm) và chuẩn hóa vector x = (2,7)
 def compute_norm_and_normalize():
     x = np.array([2, 7])
     norm_x = np.linalg.norm(x)
@@ -130,7 +128,7 @@ def compute_norm_and_normalize():
     print(f"Norm of x: {norm_x}")
     print(f"Normalized x: {normalized_x}")
 
-# Phần 2 - Bài 6
+# Phần 2 - Bài 6 : Thực hiện các phép toán vector a + b, a - b, a - c
 def vector_operations():
     a = np.array([10, 15])
     b = np.array([8, 2])
@@ -144,14 +142,14 @@ def vector_operations():
     except ValueError as e:
         print(f"Error: {e}")
 
-#Phần 2 - Bài 7
+#Phần 2 - Bài 7 : Tính tích vô hướng (dot product) của vector a và b
 def compute_dot_product():
     a = np.array([10, 15])
     b = np.array([8, 2])
     dot_product = np.dot(a, b)
     print(f"Dot product of a and b: {dot_product}")
 
-#Phần 2 - Bài 8
+#Phần 2 - Bài 8 : Thao tác trên ma trận A (kiểm tra rank, shape, truy xuất phần tử)
 def matrix_operations():
     A = np.array([[2, 4, 9], [3, 6, 7]])
 
@@ -169,6 +167,7 @@ def create_random_matrix():
 def create_identity_matrix():
     matrix = np.eye(3)
     print(f"Identity 3x3 matrix:\n{matrix}")
+
 #Phần 2 - Bài 11 : Tạo ma trận ngẫu nhiên trong phạm vi (1;10) và tính tổng đường chéo chính
 def compute_trace():
     matrix = np.random.randint(1, 11, (3, 3))
@@ -188,7 +187,6 @@ def create_diagonal_matrix():
     print(f"Diagonal 3x3 matrix:\n{matrix}")
 
 #Phần 2 - Bài 13 : Cho ma trận cho trước - tính định thức
-
 def compute_determinant():
     A = np.array([[1, 1, 2], [2, 4, -3], [3, 6, -5]])
     determinant = np.linalg.det(A)
@@ -210,6 +208,7 @@ def plot_square_y():
     plt.title("Plot of y^2")
     plt.grid(True)
     plt.show()
+
 #Phần 2 - Bài 16 : Tạo 4 giá trị cách đều từ [0;32] tính cả 2 điểm đầu và cuối
 def create_evenly_spaced():
     values = np.linspace(0, 32, 4)
@@ -226,8 +225,8 @@ def plot_x_squared():
     plt.legend()
     plt.grid(True)
     plt.show()
-#Phần 2 - Bài 18 : Vẽ đồ thị hàm số y = e^x kèm tiêu đề và nhãn trục
 
+#Phần 2 - Bài 18 : Vẽ đồ thị hàm số y = e^x kèm tiêu đề và nhãn trục
 def plot_exp():
     x = np.linspace(-2, 2, 50)
     y = np.exp(x)
@@ -240,7 +239,6 @@ def plot_exp():
     plt.show()
 
 #Phần 2 - Bài 19 : Vẽ đồ th y = log(x) với  x từ [0;5]
-
 def plot_log():
     x = np.linspace(0.1, 5, 50)  # Tránh log(0)
     y = np.log(x)
@@ -251,6 +249,7 @@ def plot_log():
     plt.legend()
     plt.grid(True)
     plt.show()
+
 #Phần 2 - Bài 20 : Chia thành 2 câu
 # - Vẽ 2 biểu đồ y = e^x và y = e^2x trên cùng 1 biểu đồ
 # - Vẽ y = log(x) và y = log(2x) trên cùng 1 subplot

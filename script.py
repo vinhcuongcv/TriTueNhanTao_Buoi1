@@ -10,7 +10,7 @@ if __name__ == '__main__':
         print("3b - Tính tổng tất cả các số từ 1 đến 6")
         print("4 - Các thao tác với từ điển (lấy khóa, giá trị, cặp khóa-giá trị)")
         print("5 - In danh sách các cặp (tên khóa học, tên khóa)")
-        print("6 - Đếm số phụ âm trong chuỗi 'jabbawocky' (bằng hai cách)")
+        print("6 - Đếm số phụ âm trong chuỗi 'jabbawocky'")
         print("7 - Chia 10 cho a với xử lý ngoại lệ (-2 ≤ a < 3)")
         print("8 - Sắp xếp danh sách các cặp (tuổi, tên) theo thứ tự tăng dần của tuổi")
         print("9 - Thao tác với tệp (mở tệp, đọc từng dòng, đọc toàn bộ)")
